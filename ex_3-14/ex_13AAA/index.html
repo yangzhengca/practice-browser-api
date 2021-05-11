@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var stayTime=window.prompt('please input the number of seconds that you would like to stay in our site');
+        var second=0; 
+        window.setTimeout("interval();",1000); 
+        function interval(){
+            second++;
+            remainSeconds=stayTime-second; 
+            console.log(remainSeconds); 
+            if(remainSeconds==0){
+                window.alert('Your session has expired, come again soon!')
+            }
+        window.setTimeout("interval();",1000); 
+        } 
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

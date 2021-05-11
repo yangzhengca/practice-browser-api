@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var userName=window.prompt('input your username');
+        var passWord=window.prompt('input your password');
+        window.alert('Wecome '+userName);
+        var stillWantLogged;
+        var stillLogged=function(){
+            stillWantLogged=window.confirm('Do you still want to be logged?');
+            if(stillWantLogged){
+                window.alert(userName+' your session has been restored');
+            }else{
+                window.alert(userName+' your session has expaired');
+            };
+            return stillWantLogged;
+            }
+        setTimeout(stillLogged,10000);     
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

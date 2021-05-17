@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>It's all JavaScript Baby!!</title>
+    <script>
+        window.onload=()=>{
+            const nameArray=['name1','name2','name3','name4','name5','name6','name7','name8','name9','name10'];
+            const ulElement=document.createElement('ul');
+            for(let i=0;i<nameArray.length;i++){
+               let liElement=document.createElement('li');
+               liElement.textContent=nameArray[i];
+               ulElement.appendChild(liElement); 
+            }
+            document.body.appendChild(ulElement);
+        }
+    </script>
+  </head>
+  <body>
+  </body>
+</html>

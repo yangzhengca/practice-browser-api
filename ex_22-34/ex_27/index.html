@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>It's all JavaScript Baby!!</title>
+    <script>
+        window.onload=()=>{
+            let numArray=[];
+            for(let i=0;i<100;i++){
+                numArray[i]=i+1;
+            }
+            // console.log(numArray);
+            const ulElement=document.createElement('ul');
+            for(let j=0;j<numArray.length;j++){
+               let liElement=document.createElement('li');
+               liElement.textContent='Item'+numArray[j];
+               if((j+1)%2==0){
+                liElement.style.color='#ddd';
+               }else{
+                liElement.style.color='#eee';   
+               }               
+               ulElement.appendChild(liElement); 
+            }
+            document.body.appendChild(ulElement);
+        }
+    </script>
+  </head>
+  <body>
+  </body>
+</html>

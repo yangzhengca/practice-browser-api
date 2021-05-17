@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Events</title>
+    <script>
+        window.onload=()=>{
+            const buttonElement=document.querySelector('button');
+            const buttonElement2=document.getElementById('secondButton')
+            buttonElement.addEventListener('click',()=>(alert('You clicked an event listened element'))
+            )
+            buttonElement.addEventListener('dblclick',()=>(alert('You double click this button')))
+            // buttonElement2.addEventListener('dblclick',()=>(alert('You double click this button')))
+        }
+    </script>
+  </head>
+  <body>
+    <button id="firstButton">Click Me!!</button>
+    <button id="secondButton">Remove event listener</button>
+    <a href="https://google.com">Link with JavaScript handler</a>
+  </body>
+</html>

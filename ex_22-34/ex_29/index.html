@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Products</title>
+    <script>
+        window.onload=()=>{
+            const ulElement=document.querySelector('ul');
+            let itemArray=[];
+            const itemNum=ulElement.children.length;
+            // console.log(ulElement.children.length);
+            for(let i=0;i<itemNum;i++){
+                itemArray[i]=ulElement.children.item(i).textContent;
+            }
+            // console.log(itemArray);
+            for(let i=0;i<itemNum;i++){
+                itemDel=ulElement.children.item(0);
+                ulElement.removeChild(itemDel);
+            }
+            // console.log(ulElement);
+        }
+    </script>
+  </head>
+  <body>
+    <ul>
+      <li>Bannana</li>
+      <li>Apple</li>
+      <li>Peach</li>
+      <li>Eggs</li>
+      <li>Tomatto</li>
+      <li>Lettuce</li>
+      <li>Milk</li>
+    </ul>
+  </body>
+</html>

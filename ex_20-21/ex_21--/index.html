@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Elements</title>
+  <style>
+    .red {
+      color: red;
+    }
+    
+    .green {
+      color: green;
+    }
+    
+    .orange {
+      color: orange;
+    }
+  </style>
+  <script>
+      window.onload=()=>{
+          const list1=document.querySelectorAll('li');
+          list1[0].classList.add('orange');
+          for(let i=0;i<list1.length;i++){
+              list1[i].nextElementSibling.classList.add('orange');
+          }
+          list3=list1[3].previousElementSibling;
+        list3.classList.add('red');
+        list1[1].previousElementSibling.classList.add('green');
+      }
+
+  </script>
+</head>
+<body>
+  <ul>
+    <li>Item 1</li>
+    <li>Item 2</li>
+    <li>Item 3</li>
+    <li>Item 4</li>
+    <li>Item 5</li>
+  </ul>
+</body>
+</html>

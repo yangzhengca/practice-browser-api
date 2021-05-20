@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        window.onload=()=>{
+            const apiUrl='https://swapi.co/api/films/';
+
+            fetch(apiUrl)
+            .then(function(respons){
+                return respons.json();
+            })
+            .then(function(data){
+                const show=data[0];
+                console.log(show.show.filmTitle); 
+                console.log(show.show.filmId); 
+                console.log(show.show.filmReleasedDate); 
+            });
+
+
+
+            // const apiURL = 'https://api.tvmaze.com/search/shows?q=batman';
+
+            // fetch(apiURL)
+            // .then(function(response) {
+            //     return response.json();
+            // })
+            // .then(function(data) {
+            //     const show = data[0];
+
+            //     console.log(show.show.name); 
+            //     console.log(show.show.premiered); 
+            //     console.log(show.show.image.original); 
+            // });
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Form elements event</title>
+        <style>
+            .error { 
+            color: red; 
+            background-color: pink;
+            border: 1px solid red;
+            padding: 5px;
+            }
+        </style>
+        <script>
+            window.onload=()=>{
+                const form=document.querySelector('form');
+                const username=form.elements[0];
+                const password=form.elements[1];
+                const email=form.elements[2];
+                const validateName=function(name){
+                    const regex=/^[a-z0-9]+$/i;
+                    return regex.test(name);
+                }
+                const validatePassword=function(pass){
+                    const passwordRegex=/^[a-z0-9]+$/i;
+                    return passwordRegex.test(pass);
+                }
+                const validateEmail=function(mail){
+                    const emailRegex= /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+                    return emailRegex.test(mail);
+                }
+                form.onsubmit=function(event){
+                    event.preventDefault();
+                    if(!validateName(username.value)){
+                        window.alert('Error!  The username is not valid');
+                        return false;
+                    }
+                    if(!validatePassword(password.value)){
+                        window.alert('Error!  The password is not valid');
+                        return false;
+                    }
+                    if(!validateEmail(email.value)){
+                        window.alert('Error! The eamil is not valid');
+                        return false;
+                    }
+                    return true;
+                };
+
+            }
+        </script>
+    </head>
+    <body>
+        <form action="save_user.html" method="post" enctype="application/x-www-form-urlencoded" name="login">
+            <input type="text" id="username" name="username" placeholder="username"/>
+            <input type="password" id="pass" name="pass" placeholder="password"/>
+            <input type="text" id="email" name="email" placeholder="email">
+            <input type="submit" name="submit" value="Send" />
+        </form>
+        <div id="errors"></div>
+    </body>
+</html>

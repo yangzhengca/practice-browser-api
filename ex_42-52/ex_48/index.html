@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Form elements event</title>
+        <script>
+            window.onload=()=>{
+                const form=document.querySelector('form');
+                const username=form.elements[0];
+                const password=form.elements[1];
+                const submit=form.elements[2];
+                // form.onfocus=function(){
+                //     form.style.boxShadow = "10px 20px 30px blue";
+                // };
+                username.onfocus=function(){
+                    username.style.boxShadow = "10px 20px 30px blue";
+                };
+                username.onblur=function(){
+                    username.style.boxShadow='';                    
+                }
+                password.onfocus=function(){
+                    password.style.boxShadow = "10px 20px 30px blue";
+                };
+                password.onblur=function(){
+                    password.style.boxShadow='';                    
+                }
+                submit.onfocus=function(){
+                    submit.style.boxShadow = "10px 20px 30px blue";
+                };
+                submit.onblur=function(){
+                    submit.style.boxShadow='';                    
+                }
+                form.onsubmit=function(event){
+                    event.preventDefault();
+                    window.alert(`Username: ${username.value},Password: ${password.value}`);
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <form action="save_user.html" method="post" enctype="application/x-www-form-urlencoded" name="login">
+            <input type="text" id="username" name="username" />
+            <input type="password" id="pass" name="pass" />
+            <input type="submit" name="submit" value="Send" />
+        </form>
+    </body>
+</html>

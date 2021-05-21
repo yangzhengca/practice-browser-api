@@ -23,7 +23,6 @@ Each time the user inputs a name we need to show it on the list/document -->
 
 
 
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -39,15 +38,20 @@ Each time the user inputs a name we need to show it on the list/document -->
                 let liElement=document.createElement('li');
                 console.log(nam);
                 console.log(liElement);
-                liElement.textContent=nam;
+                // liElement.textContent=nam;
+                const liContent=document.createTextNode(nam);
+                liElement.appendChild(liContent);
+                
+                olElement.appendChild(liElement);
+                document.body.appendChild(olElement);
+                
                 if(i%2==0){
                     liElement.style.color='#ddd';
                 }else{
                     liElement.style.color='#eee';
                 }
                 i++;
-                olElement.appendChild(liElement);
-                document.body.appendChild(olElement);
+
                 wantInput=window.confirm('Do you want to input a name?');         
             }
             window.alert('Thank you, see you next time!');
@@ -55,6 +59,8 @@ Each time the user inputs a name we need to show it on the list/document -->
     </script>
 
 <!-- Each time the user inputs a name we need to show it on the list/document ????-->
+<!-- show name after input each time (firefox)
+show name(s) after choose not to input any more (chrome) -->
 
   </head>
   <body>
